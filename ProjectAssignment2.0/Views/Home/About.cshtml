@@ -1,7 +1,55 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="@Url.RouteUrl("welcome")">
+            <img src="@Url.Content("~/Content/ibee.png")" style="height:46px;width:66px;" alt="Alternate Text" />
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="@Url.RouteUrl("about")">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="@Url.RouteUrl("contact")">Contact us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="@Url.RouteUrl("register")">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="@Url.RouteUrl("login")">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section id="about" class="about-section text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-white mb-4">About IBEE Health</h2>
+                <p class="text-white-50">
+                    IBEEHealth aims to be an informative and interactive platform where health and well-being matters are articulated. We aim to produce expert information to the users to ensure that their knowledge regarding health issues is enhanced. Our vision is in line with the United Nations development goal- Good health and Well-Being, to ensure that lack of knowledge in South Africa and Africa as whole is tackled with immense results.
+
+                    Vision: Our focus is to advocate and equip people regarding health issues to ensure reduction of insufficient information and knowledge.
+                    Mission: Our mission is to fortify availability to easily accessible information.
+                </p>
+            </div>
+        </div>
+        <img src="img/ipad.png" class="img-fluid" alt="">
+    </div>
+</section>
+
+<footer class="bg-black small text-center text-white-50">
+    <div class="container">
+        Copyright &copy; IBEEHEALTH 2019
+    </div>
+</footer>
