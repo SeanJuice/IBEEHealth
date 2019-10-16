@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/freelancer.min.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+
+</head>
+<body id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">IBEE HEALTH</a>
+            <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">RECIPES</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">DIETS</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">MEAL PLANS</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">RECOMMENDATIONS</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link btn btn-sm btn-success py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">LOGIN</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+    <script src="~/Scripts/custom/contact_me.min.js"></script>
+    <script src="~/Scripts/custom/freelancer.min.js"></script>
+    <script src="~/Scripts/custom/jqBootstrapValidation.min.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
