@@ -359,6 +359,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\IBEEHEALTH\Home.cshtml" />
+    <Content Include="Views\IBEEHEALTH\MealPlan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
