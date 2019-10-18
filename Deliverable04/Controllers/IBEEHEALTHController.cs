@@ -11,7 +11,9 @@ namespace Deliverable04.Controllers
         // GET: IBEEHEALTH
         public ActionResult Index()
         {
-            return View();
+            return View("DietView");
         }
+
+       
     }
 }
