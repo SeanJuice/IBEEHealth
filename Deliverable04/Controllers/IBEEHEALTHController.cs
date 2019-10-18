@@ -13,5 +13,10 @@ namespace Deliverable04.Controllers
         {
             return View();
         }
+
+        public ActionResult Recommendation()
+        {
+            return View();
+        }
     }
 }
