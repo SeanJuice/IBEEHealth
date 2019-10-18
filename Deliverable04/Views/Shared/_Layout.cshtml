@@ -37,7 +37,7 @@
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">RECOMMENDATIONS</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link btn btn-sm btn-success py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">LOGIN</a>
+                        <a class="nav-link btn btn-sm btn-success py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="location.href='@Url.Action("SignIn", "IBEEHEALTH")';return false;" >LOGIN</a>
                     </li>
 
                 </ul>
@@ -48,7 +48,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - IBEE HEALTH TIME</p>
         </footer>
     </div>
     <script src="~/Scripts/custom/contact_me.min.js"></script>

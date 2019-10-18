@@ -13,5 +13,14 @@ namespace Deliverable04.Controllers
         {
             return View();
         }
+
+        public ActionResult SignIn()
+        {
+            return View();
+        }
+        public ActionResult Register()
+        {
+            return View();
+        }
     }
 }
