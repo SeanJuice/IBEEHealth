@@ -22,5 +22,10 @@ namespace Deliverable04.Controllers
         {
             return View();
         }
+
+        public ActionResult StoreLocator()
+        {
+            return View();
+        }
     }
 }

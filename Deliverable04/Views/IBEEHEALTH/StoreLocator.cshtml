@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "StoreLocator";
+}
+
+<h2>StoreLocator</h2>
+
+<link href="~/Scripts/Locator.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.0.0.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.dropdown-toggle').dropdown();
+    });
+</script>
+
+
+<header>
+    <img src="~/Content/FOLLOW ME.png"  class="img-fluid" alt="Responsive image">
+</header>
+<br />
+<br />
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4 d-flex justify-content-center">
+            <div class="card" style="width: 20rem;">
+               
+                <div class="card-body">
+                    <h5 class="card-title">choose your Location </h5>
+                    <div class="dropdown" align="right">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown button
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-primary">Find</button>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 d-flex justify-content-center">
+            <div class="card" style="width: 20rem;">
+               
+                <div class="card-body">
+                    <h5 class="card-title">List of shops new at ......</h5>
+                    <p class="card-text">some text</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
