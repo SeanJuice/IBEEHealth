@@ -6,24 +6,27 @@
 <h1>Recommendation</h1>
 
 <div class="container">
+
+    @using (Html.BeginForm("Recommendation", "IBEEHEALTH", FormMethod.Post))
+    {
     <h2> BMI Calculator </h2> <br />
 
     <div class="row">
         <div class="col-sm-4">
 
             <label> Height </label> <br />
-            <input type="number" name="txtHeight" />
+            <input type="number" name="Height" required/>
 
             <br />
             <br />
 
             <label> Weight </label> <br />
-            <input type="number" name="txtWeight" />
+            <input type="number" name="Weight" required/>
 
             <br />
             <br />
 
-            <button class="btn-default"> Calculate </button> <br /> <br />
+            <button class="btn-default" type="submit"> Calculate </button> <br /> <br />
         </div>
 
 
@@ -31,12 +34,16 @@
             <h3> Your BMI: </h3> 
 
             -------------------------<br /> <br />
+            <div style="font-size:30px" >
+                @ViewBag.Result
+            </div>
 
             <br /> <br />
 
             -------------------------
         </div>
     </div>
+    }
 </div>
 
 <br /> <br />
@@ -51,22 +58,22 @@
         <tr>
             <td>Underweight</td>
             <td>Less than 18.50</td>
-            <td> <button class="btn-default">Underweight Diet</button> </td>
+            <td> <button class="btn-default" name="btnUnderweight">Underweight Diet</button> </td>
         </tr>
         <tr>
             <td>Healthy</td>
             <td>18.50 to 24.99</td>
-            <td> <button class="btn-default">Healthy Diet</button> </td>
+            <td> <button class="btn-default"name="btnHealthy">Healthy Diet</button> </td>
         </tr>
         <tr>
             <td>Overweight</td>
             <td>25.00 to 29.99</td>
-            <td> <button class="btn-default">Overweight Diet</button> </td>
+            <td> <button class="btn-default"name="btnOverweight">Overweight Diet</button> </td>
         </tr>
         <tr>
             <td>Obese</td>
             <td>30 or more</td>
-            <td> <button class="btn-default">Obese Diet</button> </td>
+            <td> <button class="btn-default"name="btnObese">Obese Diet</button> </td>
         </tr>
     </table>
 

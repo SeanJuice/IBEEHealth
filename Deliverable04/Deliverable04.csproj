@@ -282,6 +282,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\35435047_10217273083797996_5373292288191496192_n.jpg" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -313,6 +314,7 @@
     <Content Include="Scripts\custom\freelancer.min.js" />
     <Content Include="Scripts\custom\jqBootstrapValidation.js" />
     <Content Include="Scripts\custom\jqBootstrapValidation.min.js" />
+    <Content Include="Scripts\JavaScript.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -361,6 +363,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\IBEEHEALTH\Home.cshtml" />
     <Content Include="Views\IBEEHEALTH\Recommendation.cshtml" />
+    <Content Include="Views\IBEEHEALTH\HealthyDiet.cshtml" />
+    <Content Include="Views\Home\Diet.cshtml" />
+    <Content Include="Views\Home\Diets.cshtml" />
+    <Content Include="Views\Home\Recipe.cshtml" />
+    <Content Include="Views\Home\Recipes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
