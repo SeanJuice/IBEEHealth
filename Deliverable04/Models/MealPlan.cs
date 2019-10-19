@@ -17,14 +17,15 @@ namespace Deliverable04.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MealPlan()
         {
-            this.FoodPlans = new HashSet<FoodPlan>();
+            this.FoodPlan = new HashSet<FoodPlan>();
         }
     
         public int MealPlanID { get; set; }
         public string Name { get; set; }
         public Nullable<int> Duration { get; set; }
+        public string Details { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FoodPlan> FoodPlans { get; set; }
+        public virtual ICollection<FoodPlan> FoodPlan { get; set; }
     }
 }

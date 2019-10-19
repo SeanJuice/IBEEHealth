@@ -17,13 +17,13 @@ namespace Deliverable04.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public FoodCategory()
         {
-            this.FoodItems = new HashSet<FoodItem>();
+            this.FoodItem = new HashSet<FoodItem>();
         }
     
         public int FoodCategoryID { get; set; }
         public string FoodCategory1 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FoodItem> FoodItems { get; set; }
+        public virtual ICollection<FoodItem> FoodItem { get; set; }
     }
 }

@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IBEEHEALTHModel1StoreContainer" CdmEntityContainer="IBEEHEALTHEntities1">
+    <EntitySetMapping Name="City">
+      <EntityTypeMapping TypeName="IBEEHEALTHModel1.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CityStore">
+      <EntityTypeMapping TypeName="IBEEHEALTHModel1.CityStore">
+        <MappingFragment StoreEntitySet="CityStore">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Diet">
+      <EntityTypeMapping TypeName="IBEEHEALTHModel1.Diet">
+        <MappingFragment StoreEntitySet="Diet">
+          <ScalarProperty Name="DietID" ColumnName="DietID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DietType" ColumnName="DietType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DietRecipe">
+      <EntityTypeMapping TypeName="IBEEHEALTHModel1.DietRecipe">
+        <MappingFragment StoreEntitySet="DietRecipe">
+          <ScalarProperty Name="RecipeID" ColumnName="RecipeID" />
+          <ScalarProperty Name="DietID" ColumnName="DietID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodCategory">
+      <EntityTypeMapping TypeName="IBEEHEALTHModel1.FoodCategory">
+        <MappingFragment StoreEntitySet="FoodCategory">
+          <ScalarProperty Name="FoodCategoryID" ColumnName="FoodCategoryID" />
+          <ScalarProperty Name="FoodCategory1" ColumnName="FoodCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodDiet">
+      <EntityTypeMapping TypeName="IBEEHEALTHModel1.FoodDiet">
+        <MappingFragment StoreEntitySet="FoodDiet">
+          <ScalarProperty Name="DietID" ColumnName="DietID" />
+          <ScalarProperty Name="FoodItem" ColumnName="FoodItem" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodItem">
+      <EntityTypeMapping TypeName="IBEEHEALTHModel1.FoodItem">
+        <MappingFragment StoreEntitySet="FoodItem">
+          <ScalarProperty Name="FoodItem1" ColumnName="FoodItem" />
+          <ScalarProperty Name="FoodCategoryID" ColumnName="FoodCategoryID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Calories" ColumnName="Calories" />
+          <ScalarProperty Name="Protein" ColumnName="Protein" />
+          <ScalarProperty Name="Fat" ColumnName="Fat" />
+          <ScalarProperty Name="Caborhydrates" ColumnName="Caborhydrates" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodPlan">
+      <EntityTypeMapping TypeName="IBEEHEALTHModel1.FoodPlan">
+        <MappingFragment StoreEntitySet="FoodPlan">
+          <ScalarProperty Name="FoodItemID" ColumnName="FoodItemID" />
+          <ScalarProperty Name="MealPlanID" ColumnName="MealPlanID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodRecipe">
+      <EntityTypeMapping TypeName="IBEEHEALTHModel1.FoodRecipe">
+        <MappingFragment StoreEntitySet="FoodRecipe">
+          <ScalarProperty Name="RecipeID" ColumnName="RecipeID" />
+          <ScalarProperty Name="FoodItem" ColumnName="FoodItem" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MealPlan">
+      <EntityTypeMapping TypeName="IBEEHEALTHModel1.MealPlan">
+        <MappingFragment StoreEntitySet="MealPlan">
+          <ScalarProperty Name="MealPlanID" ColumnName="MealPlanID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Province">
+      <EntityTypeMapping TypeName="IBEEHEALTHModel1.Province">
+        <MappingFragment StoreEntitySet="Province">
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recipe">
+      <EntityTypeMapping TypeName="IBEEHEALTHModel1.Recipe">
+        <MappingFragment StoreEntitySet="Recipe">
+          <ScalarProperty Name="RecipeID" ColumnName="RecipeID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Store">
+      <EntityTypeMapping TypeName="IBEEHEALTHModel1.Store">
+        <MappingFragment StoreEntitySet="Store">
+          <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="AvailableOnline" ColumnName="AvailableOnline" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="IBEEHEALTHModel1.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="DietID" ColumnName="DietID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Allergies" ColumnName="Allergies" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserType">
+      <EntityTypeMapping TypeName="IBEEHEALTHModel1.UserType">
+        <MappingFragment StoreEntitySet="UserType">
+          <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -17,8 +17,8 @@ namespace Deliverable04.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Recipe()
         {
-            this.DietRecipes = new HashSet<DietRecipe>();
-            this.FoodRecipes = new HashSet<FoodRecipe>();
+            this.DietRecipe = new HashSet<DietRecipe>();
+            this.FoodRecipe = new HashSet<FoodRecipe>();
         }
     
         public int RecipeID { get; set; }
@@ -26,8 +26,8 @@ namespace Deliverable04.Models
         public string Description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DietRecipe> DietRecipes { get; set; }
+        public virtual ICollection<DietRecipe> DietRecipe { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FoodRecipe> FoodRecipes { get; set; }
+        public virtual ICollection<FoodRecipe> FoodRecipe { get; set; }
     }
 }

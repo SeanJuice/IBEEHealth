@@ -17,9 +17,9 @@ namespace Deliverable04.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public FoodItem()
         {
-            this.FoodDiets = new HashSet<FoodDiet>();
-            this.FoodPlans = new HashSet<FoodPlan>();
-            this.FoodRecipes = new HashSet<FoodRecipe>();
+            this.FoodDiet = new HashSet<FoodDiet>();
+            this.FoodPlan = new HashSet<FoodPlan>();
+            this.FoodRecipe = new HashSet<FoodRecipe>();
         }
     
         public int FoodItem1 { get; set; }
@@ -32,10 +32,10 @@ namespace Deliverable04.Models
     
         public virtual FoodCategory FoodCategory { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FoodDiet> FoodDiets { get; set; }
+        public virtual ICollection<FoodDiet> FoodDiet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FoodPlan> FoodPlans { get; set; }
+        public virtual ICollection<FoodPlan> FoodPlan { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FoodRecipe> FoodRecipes { get; set; }
+        public virtual ICollection<FoodRecipe> FoodRecipe { get; set; }
     }
 }

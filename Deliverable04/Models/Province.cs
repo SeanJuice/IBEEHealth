@@ -17,13 +17,13 @@ namespace Deliverable04.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Province()
         {
-            this.Cities = new HashSet<City>();
+            this.City = new HashSet<City>();
         }
     
         public int ProvinceID { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<City> Cities { get; set; }
+        public virtual ICollection<City> City { get; set; }
     }
 }

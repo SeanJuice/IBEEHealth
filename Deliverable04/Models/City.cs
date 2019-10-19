@@ -17,8 +17,8 @@ namespace Deliverable04.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public City()
         {
-            this.CityStores = new HashSet<CityStore>();
-            this.Users = new HashSet<User>();
+            this.CityStore = new HashSet<CityStore>();
+            this.User = new HashSet<User>();
         }
     
         public int CityID { get; set; }
@@ -27,8 +27,8 @@ namespace Deliverable04.Models
     
         public virtual Province Province { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CityStore> CityStores { get; set; }
+        public virtual ICollection<CityStore> CityStore { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<User> User { get; set; }
     }
 }

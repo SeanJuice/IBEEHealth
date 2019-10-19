@@ -17,7 +17,7 @@ namespace Deliverable04.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            this.UserTypes = new HashSet<UserType>();
+            this.UserType = new HashSet<UserType>();
         }
     
         public int UserID { get; set; }
@@ -33,6 +33,6 @@ namespace Deliverable04.Models
         public virtual City City { get; set; }
         public virtual Diet Diet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserType> UserTypes { get; set; }
+        public virtual ICollection<UserType> UserType { get; set; }
     }
 }

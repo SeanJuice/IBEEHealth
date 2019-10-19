@@ -17,7 +17,7 @@ namespace Deliverable04.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Store()
         {
-            this.CityStores = new HashSet<CityStore>();
+            this.CityStore = new HashSet<CityStore>();
         }
     
         public int StoreID { get; set; }
@@ -26,6 +26,6 @@ namespace Deliverable04.Models
         public string AvailableOnline { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CityStore> CityStores { get; set; }
+        public virtual ICollection<CityStore> CityStore { get; set; }
     }
 }

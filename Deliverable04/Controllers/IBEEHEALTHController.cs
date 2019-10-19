@@ -13,5 +13,21 @@ namespace Deliverable04.Controllers
         {
             return View();
         }
+        public ActionResult MealPlanVegan()
+        {
+            return View();
+        }
+        public ActionResult MealPlanVegetarian()
+        {
+            return View();
+        }
+        public ActionResult MealPlanDetails()
+        {
+            return View();
+        }
+        public ActionResult ShowDetails()
+        {
+            return View();
+        }
     }
 }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="371278e6eb9b4ed2864566046a20ab79" Name="Diagram1">
+        <EntityTypeShape EntityType="IBEEHEALTHModel1.City" Width="1.5" PointX="6" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IBEEHEALTHModel1.CityStore" Width="1.5" PointX="8.25" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IBEEHEALTHModel1.Diet" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IBEEHEALTHModel1.DietRecipe" Width="1.5" PointX="5.25" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IBEEHEALTHModel1.FoodCategory" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IBEEHEALTHModel1.FoodDiet" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IBEEHEALTHModel1.FoodItem" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IBEEHEALTHModel1.FoodPlan" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IBEEHEALTHModel1.FoodRecipe" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IBEEHEALTHModel1.MealPlan" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IBEEHEALTHModel1.Province" Width="1.5" PointX="3.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="IBEEHEALTHModel1.Recipe" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IBEEHEALTHModel1.Store" Width="1.5" PointX="6" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IBEEHEALTHModel1.User" Width="1.5" PointX="8.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IBEEHEALTHModel1.UserType" Width="1.5" PointX="10.5" PointY="8.875" IsExpanded="true" />
+        <AssociationConnector Association="IBEEHEALTHModel1.FK_City_Province" ManuallyRouted="false" />
+        <AssociationConnector Association="IBEEHEALTHModel1.FK_CityStore_City" ManuallyRouted="false" />
+        <AssociationConnector Association="IBEEHEALTHModel1.FK_User_City" ManuallyRouted="false" />
+        <AssociationConnector Association="IBEEHEALTHModel1.FK_CityStore_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="IBEEHEALTHModel1.FK_DietRecipe_Diet" ManuallyRouted="false" />
+        <AssociationConnector Association="IBEEHEALTHModel1.FK_FoodDiet_Diet" ManuallyRouted="false" />
+        <AssociationConnector Association="IBEEHEALTHModel1.FK_User_Diet" ManuallyRouted="false" />
+        <AssociationConnector Association="IBEEHEALTHModel1.FK_DietRecipe_Recipe" ManuallyRouted="false" />
+        <AssociationConnector Association="IBEEHEALTHModel1.FK_FoodItem_FoodCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="IBEEHEALTHModel1.FK_FoodDiet_FoodItem" ManuallyRouted="false" />
+        <AssociationConnector Association="IBEEHEALTHModel1.FK_FoodPlan_FoodItem" ManuallyRouted="false" />
+        <AssociationConnector Association="IBEEHEALTHModel1.FK_FoodRecipe_FoodItem" ManuallyRouted="false" />
+        <AssociationConnector Association="IBEEHEALTHModel1.FK_FoodPlan_MealPlan" ManuallyRouted="false" />
+        <AssociationConnector Association="IBEEHEALTHModel1.FK_FoodRecipe_Recipe" ManuallyRouted="false" />
+        <AssociationConnector Association="IBEEHEALTHModel1.FK_UserType_User1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
