@@ -3,5 +3,23 @@
     ViewBag.Title = "MealPlanDetails";
 }
 
+<br />
+<br />
+
 <h2>MealPlanDetails</h2>
 
+<div class="row w-100 row-eq-height" style="margin-top:4rem">
+    @foreach (var mealplan in Model.mealplans)
+    {
+        <div class="col-md-4 w-100 px-2 mt-2">
+            <div class="card w-100">
+                <img src="@mealplan.cover" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@mealplan.Name</h5>
+                    <p class="card-text">@mealplan.Description</p>
+                    <a onclick="location.href = '@Url.Action("Recipe/1","Home")'; return false;" class="btn btn-primary">view</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

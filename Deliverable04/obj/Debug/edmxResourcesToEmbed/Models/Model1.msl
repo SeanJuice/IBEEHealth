@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="IBEEHEALTHModelStoreContainer" CdmEntityContainer="IBEEHEALTHEntities">
-    <EntitySetMapping Name="Cities">
+  <EntityContainerMapping StorageEntityContainer="IBEEHEALTHModelStoreContainer" CdmEntityContainer="IBEEHEALTHEntities2">
+    <EntitySetMapping Name="City">
       <EntityTypeMapping TypeName="IBEEHEALTHModel.City">
         <MappingFragment StoreEntitySet="City">
           <ScalarProperty Name="CityID" ColumnName="CityID" />
@@ -10,7 +10,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CityStores">
+    <EntitySetMapping Name="CityStore">
       <EntityTypeMapping TypeName="IBEEHEALTHModel.CityStore">
         <MappingFragment StoreEntitySet="CityStore">
           <ScalarProperty Name="CityID" ColumnName="CityID" />
@@ -19,16 +19,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Diets">
+    <EntitySetMapping Name="Diet">
       <EntityTypeMapping TypeName="IBEEHEALTHModel.Diet">
         <MappingFragment StoreEntitySet="Diet">
           <ScalarProperty Name="DietID" ColumnName="DietID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="DietType" ColumnName="DietType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="cover" ColumnName="cover" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DietRecipes">
+    <EntitySetMapping Name="DietRecipe">
       <EntityTypeMapping TypeName="IBEEHEALTHModel.DietRecipe">
         <MappingFragment StoreEntitySet="DietRecipe">
           <ScalarProperty Name="RecipeID" ColumnName="RecipeID" />
@@ -37,7 +39,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="FoodCategories">
+    <EntitySetMapping Name="FoodCategory">
       <EntityTypeMapping TypeName="IBEEHEALTHModel.FoodCategory">
         <MappingFragment StoreEntitySet="FoodCategory">
           <ScalarProperty Name="FoodCategoryID" ColumnName="FoodCategoryID" />
@@ -45,7 +47,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="FoodDiets">
+    <EntitySetMapping Name="FoodDiet">
       <EntityTypeMapping TypeName="IBEEHEALTHModel.FoodDiet">
         <MappingFragment StoreEntitySet="FoodDiet">
           <ScalarProperty Name="DietID" ColumnName="DietID" />
@@ -54,7 +56,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="FoodItems">
+    <EntitySetMapping Name="FoodItem">
       <EntityTypeMapping TypeName="IBEEHEALTHModel.FoodItem">
         <MappingFragment StoreEntitySet="FoodItem">
           <ScalarProperty Name="FoodItem1" ColumnName="FoodItem" />
@@ -67,7 +69,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="FoodPlans">
+    <EntitySetMapping Name="FoodPlan">
       <EntityTypeMapping TypeName="IBEEHEALTHModel.FoodPlan">
         <MappingFragment StoreEntitySet="FoodPlan">
           <ScalarProperty Name="FoodItemID" ColumnName="FoodItemID" />
@@ -76,7 +78,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="FoodRecipes">
+    <EntitySetMapping Name="FoodRecipe">
       <EntityTypeMapping TypeName="IBEEHEALTHModel.FoodRecipe">
         <MappingFragment StoreEntitySet="FoodRecipe">
           <ScalarProperty Name="RecipeID" ColumnName="RecipeID" />
@@ -85,16 +87,19 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="MealPlans">
+    <EntitySetMapping Name="MealPlan">
       <EntityTypeMapping TypeName="IBEEHEALTHModel.MealPlan">
         <MappingFragment StoreEntitySet="MealPlan">
           <ScalarProperty Name="MealPlanID" ColumnName="MealPlanID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="cover" ColumnName="cover" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Provinces">
+    <EntitySetMapping Name="Province">
       <EntityTypeMapping TypeName="IBEEHEALTHModel.Province">
         <MappingFragment StoreEntitySet="Province">
           <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
@@ -102,16 +107,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Recipes">
+    <EntitySetMapping Name="Recipe">
       <EntityTypeMapping TypeName="IBEEHEALTHModel.Recipe">
         <MappingFragment StoreEntitySet="Recipe">
           <ScalarProperty Name="RecipeID" ColumnName="RecipeID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="cover" ColumnName="cover" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Stores">
+    <EntitySetMapping Name="Store">
       <EntityTypeMapping TypeName="IBEEHEALTHModel.Store">
         <MappingFragment StoreEntitySet="Store">
           <ScalarProperty Name="StoreID" ColumnName="StoreID" />
@@ -121,18 +127,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="IBEEHEALTHModel.sysdiagram">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Users">
+    <EntitySetMapping Name="User">
       <EntityTypeMapping TypeName="IBEEHEALTHModel.User">
         <MappingFragment StoreEntitySet="User">
           <ScalarProperty Name="UserID" ColumnName="UserID" />
@@ -143,15 +138,15 @@
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Height" ColumnName="Height" />
           <ScalarProperty Name="Weight" ColumnName="Weight" />
-          <ScalarProperty Name="Allergies" ColumnName="Allergies" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="UserTypes">
+    <EntitySetMapping Name="UserType">
       <EntityTypeMapping TypeName="IBEEHEALTHModel.UserType">
         <MappingFragment StoreEntitySet="UserType">
           <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="Description" ColumnName="Description" />
         </MappingFragment>
       </EntityTypeMapping>

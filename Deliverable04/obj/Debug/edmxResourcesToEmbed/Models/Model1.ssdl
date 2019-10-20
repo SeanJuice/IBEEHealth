@@ -23,6 +23,8 @@
     <Property Name="DietID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="varchar" MaxLength="50" />
     <Property Name="DietType" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="cover" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="DietRecipe">
     <Key>
@@ -82,6 +84,9 @@
     <Property Name="MealPlanID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="varchar" MaxLength="50" />
     <Property Name="Duration" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="Details" Type="varchar" MaxLength="50" />
+    <Property Name="cover" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Province">
     <Key>
@@ -97,6 +102,7 @@
     <Property Name="RecipeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="varchar" MaxLength="50" />
     <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="cover" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Store">
     <Key>
@@ -106,16 +112,6 @@
     <Property Name="Name" Type="varchar" MaxLength="50" />
     <Property Name="Website" Type="varchar" MaxLength="50" />
     <Property Name="AvailableOnline" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -129,14 +125,14 @@
     <Property Name="Email" Type="varchar" MaxLength="50" />
     <Property Name="Height" Type="float" />
     <Property Name="Weight" Type="float" />
-    <Property Name="Allergies" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar(max)" />
+    <Property Name="UserTypeID" Type="int" />
   </EntityType>
   <EntityType Name="UserType">
     <Key>
       <PropertyRef Name="UserTypeID" />
     </Key>
     <Property Name="UserTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="UserID" Type="int" />
     <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <Association Name="FK_City_Province">
@@ -307,15 +303,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_UserType_User1">
-    <End Role="User" Type="Self.User" Multiplicity="0..1" />
-    <End Role="UserType" Type="Self.UserType" Multiplicity="*" />
+  <Association Name="FK_User_UserType">
+    <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="UserID" />
+      <Principal Role="UserType">
+        <PropertyRef Name="UserTypeID" />
       </Principal>
-      <Dependent Role="UserType">
-        <PropertyRef Name="UserID" />
+      <Dependent Role="User">
+        <PropertyRef Name="UserTypeID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -333,7 +329,6 @@
     <EntitySet Name="Province" EntityType="Self.Province" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Recipe" EntityType="Self.Recipe" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_City_Province" Association="Self.FK_City_Province">
@@ -392,9 +387,9 @@
       <End Role="Diet" EntitySet="Diet" />
       <End Role="User" EntitySet="User" />
     </AssociationSet>
-    <AssociationSet Name="FK_UserType_User1" Association="Self.FK_UserType_User1">
-      <End Role="User" EntitySet="User" />
+    <AssociationSet Name="FK_User_UserType" Association="Self.FK_User_UserType">
       <End Role="UserType" EntitySet="UserType" />
+      <End Role="User" EntitySet="User" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

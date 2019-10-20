@@ -25,6 +25,8 @@ namespace Deliverable04.Models
         public int DietID { get; set; }
         public string Name { get; set; }
         public string DietType { get; set; }
+        public string Description { get; set; }
+        public string cover { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DietRecipe> DietRecipe { get; set; }

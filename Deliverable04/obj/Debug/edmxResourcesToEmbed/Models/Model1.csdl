@@ -8,8 +8,8 @@
     <Property Name="ProvinceID" Type="Int32" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Province" Relationship="Self.FK_City_Province" FromRole="City" ToRole="Province" />
-    <NavigationProperty Name="CityStores" Relationship="Self.FK_CityStore_City" FromRole="City" ToRole="CityStore" />
-    <NavigationProperty Name="Users" Relationship="Self.FK_User_City" FromRole="City" ToRole="User" />
+    <NavigationProperty Name="CityStore" Relationship="Self.FK_CityStore_City" FromRole="City" ToRole="CityStore" />
+    <NavigationProperty Name="User" Relationship="Self.FK_User_City" FromRole="City" ToRole="User" />
   </EntityType>
   <EntityType Name="CityStore">
     <Key>
@@ -28,9 +28,11 @@
     <Property Name="DietID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="DietType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="DietRecipes" Relationship="Self.FK_DietRecipe_Diet" FromRole="Diet" ToRole="DietRecipe" />
-    <NavigationProperty Name="FoodDiets" Relationship="Self.FK_FoodDiet_Diet" FromRole="Diet" ToRole="FoodDiet" />
-    <NavigationProperty Name="Users" Relationship="Self.FK_User_Diet" FromRole="Diet" ToRole="User" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cover" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DietRecipe" Relationship="Self.FK_DietRecipe_Diet" FromRole="Diet" ToRole="DietRecipe" />
+    <NavigationProperty Name="FoodDiet" Relationship="Self.FK_FoodDiet_Diet" FromRole="Diet" ToRole="FoodDiet" />
+    <NavigationProperty Name="User" Relationship="Self.FK_User_Diet" FromRole="Diet" ToRole="User" />
   </EntityType>
   <EntityType Name="DietRecipe">
     <Key>
@@ -48,7 +50,7 @@
     </Key>
     <Property Name="FoodCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FoodCategory1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="FoodItems" Relationship="Self.FK_FoodItem_FoodCategory" FromRole="FoodCategory" ToRole="FoodItem" />
+    <NavigationProperty Name="FoodItem" Relationship="Self.FK_FoodItem_FoodCategory" FromRole="FoodCategory" ToRole="FoodItem" />
   </EntityType>
   <EntityType Name="FoodDiet">
     <Key>
@@ -72,9 +74,9 @@
     <Property Name="Fat" Type="Double" />
     <Property Name="Caborhydrates" Type="Double" />
     <NavigationProperty Name="FoodCategory" Relationship="Self.FK_FoodItem_FoodCategory" FromRole="FoodItem" ToRole="FoodCategory" />
-    <NavigationProperty Name="FoodDiets" Relationship="Self.FK_FoodDiet_FoodItem" FromRole="FoodItem" ToRole="FoodDiet" />
-    <NavigationProperty Name="FoodPlans" Relationship="Self.FK_FoodPlan_FoodItem" FromRole="FoodItem" ToRole="FoodPlan" />
-    <NavigationProperty Name="FoodRecipes" Relationship="Self.FK_FoodRecipe_FoodItem" FromRole="FoodItem" ToRole="FoodRecipe" />
+    <NavigationProperty Name="FoodDiet" Relationship="Self.FK_FoodDiet_FoodItem" FromRole="FoodItem" ToRole="FoodDiet" />
+    <NavigationProperty Name="FoodPlan" Relationship="Self.FK_FoodPlan_FoodItem" FromRole="FoodItem" ToRole="FoodPlan" />
+    <NavigationProperty Name="FoodRecipe" Relationship="Self.FK_FoodRecipe_FoodItem" FromRole="FoodItem" ToRole="FoodRecipe" />
   </EntityType>
   <EntityType Name="FoodPlan">
     <Key>
@@ -103,7 +105,10 @@
     <Property Name="MealPlanID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Duration" Type="Int32" />
-    <NavigationProperty Name="FoodPlans" Relationship="Self.FK_FoodPlan_MealPlan" FromRole="MealPlan" ToRole="FoodPlan" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Details" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cover" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="FoodPlan" Relationship="Self.FK_FoodPlan_MealPlan" FromRole="MealPlan" ToRole="FoodPlan" />
   </EntityType>
   <EntityType Name="Province">
     <Key>
@@ -111,7 +116,7 @@
     </Key>
     <Property Name="ProvinceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Cities" Relationship="Self.FK_City_Province" FromRole="Province" ToRole="City" />
+    <NavigationProperty Name="City" Relationship="Self.FK_City_Province" FromRole="Province" ToRole="City" />
   </EntityType>
   <EntityType Name="Recipe">
     <Key>
@@ -120,8 +125,9 @@
     <Property Name="RecipeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="DietRecipes" Relationship="Self.FK_DietRecipe_Recipe" FromRole="Recipe" ToRole="DietRecipe" />
-    <NavigationProperty Name="FoodRecipes" Relationship="Self.FK_FoodRecipe_Recipe" FromRole="Recipe" ToRole="FoodRecipe" />
+    <Property Name="cover" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DietRecipe" Relationship="Self.FK_DietRecipe_Recipe" FromRole="Recipe" ToRole="DietRecipe" />
+    <NavigationProperty Name="FoodRecipe" Relationship="Self.FK_FoodRecipe_Recipe" FromRole="Recipe" ToRole="FoodRecipe" />
   </EntityType>
   <EntityType Name="Store">
     <Key>
@@ -131,17 +137,7 @@
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="AvailableOnline" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="CityStores" Relationship="Self.FK_CityStore_Store" FromRole="Store" ToRole="CityStore" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="CityStore" Relationship="Self.FK_CityStore_Store" FromRole="Store" ToRole="CityStore" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -155,19 +151,19 @@
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Height" Type="Double" />
     <Property Name="Weight" Type="Double" />
-    <Property Name="Allergies" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UserTypeID" Type="Int32" />
     <NavigationProperty Name="City" Relationship="Self.FK_User_City" FromRole="User" ToRole="City" />
     <NavigationProperty Name="Diet" Relationship="Self.FK_User_Diet" FromRole="User" ToRole="Diet" />
-    <NavigationProperty Name="UserTypes" Relationship="Self.FK_UserType_User1" FromRole="User" ToRole="UserType" />
+    <NavigationProperty Name="UserType" Relationship="Self.FK_User_UserType" FromRole="User" ToRole="UserType" />
   </EntityType>
   <EntityType Name="UserType">
     <Key>
       <PropertyRef Name="UserTypeID" />
     </Key>
     <Property Name="UserTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserID" Type="Int32" />
     <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="User" Relationship="Self.FK_UserType_User1" FromRole="UserType" ToRole="User" />
+    <NavigationProperty Name="User" Relationship="Self.FK_User_UserType" FromRole="UserType" ToRole="User" />
   </EntityType>
   <Association Name="FK_City_Province">
     <End Role="Province" Type="Self.Province" Multiplicity="0..1" />
@@ -337,94 +333,93 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_UserType_User1">
-    <End Role="User" Type="Self.User" Multiplicity="0..1" />
-    <End Role="UserType" Type="Self.UserType" Multiplicity="*" />
+  <Association Name="FK_User_UserType">
+    <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="UserID" />
+      <Principal Role="UserType">
+        <PropertyRef Name="UserTypeID" />
       </Principal>
-      <Dependent Role="UserType">
-        <PropertyRef Name="UserID" />
+      <Dependent Role="User">
+        <PropertyRef Name="UserTypeID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="IBEEHEALTHEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Cities" EntityType="Self.City" />
-    <EntitySet Name="CityStores" EntityType="Self.CityStore" />
-    <EntitySet Name="Diets" EntityType="Self.Diet" />
-    <EntitySet Name="DietRecipes" EntityType="Self.DietRecipe" />
-    <EntitySet Name="FoodCategories" EntityType="Self.FoodCategory" />
-    <EntitySet Name="FoodDiets" EntityType="Self.FoodDiet" />
-    <EntitySet Name="FoodItems" EntityType="Self.FoodItem" />
-    <EntitySet Name="FoodPlans" EntityType="Self.FoodPlan" />
-    <EntitySet Name="FoodRecipes" EntityType="Self.FoodRecipe" />
-    <EntitySet Name="MealPlans" EntityType="Self.MealPlan" />
-    <EntitySet Name="Provinces" EntityType="Self.Province" />
-    <EntitySet Name="Recipes" EntityType="Self.Recipe" />
-    <EntitySet Name="Stores" EntityType="Self.Store" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-    <EntitySet Name="Users" EntityType="Self.User" />
-    <EntitySet Name="UserTypes" EntityType="Self.UserType" />
+  <EntityContainer Name="IBEEHEALTHEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="City" EntityType="Self.City" />
+    <EntitySet Name="CityStore" EntityType="Self.CityStore" />
+    <EntitySet Name="Diet" EntityType="Self.Diet" />
+    <EntitySet Name="DietRecipe" EntityType="Self.DietRecipe" />
+    <EntitySet Name="FoodCategory" EntityType="Self.FoodCategory" />
+    <EntitySet Name="FoodDiet" EntityType="Self.FoodDiet" />
+    <EntitySet Name="FoodItem" EntityType="Self.FoodItem" />
+    <EntitySet Name="FoodPlan" EntityType="Self.FoodPlan" />
+    <EntitySet Name="FoodRecipe" EntityType="Self.FoodRecipe" />
+    <EntitySet Name="MealPlan" EntityType="Self.MealPlan" />
+    <EntitySet Name="Province" EntityType="Self.Province" />
+    <EntitySet Name="Recipe" EntityType="Self.Recipe" />
+    <EntitySet Name="Store" EntityType="Self.Store" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <EntitySet Name="UserType" EntityType="Self.UserType" />
     <AssociationSet Name="FK_City_Province" Association="Self.FK_City_Province">
-      <End Role="Province" EntitySet="Provinces" />
-      <End Role="City" EntitySet="Cities" />
+      <End Role="Province" EntitySet="Province" />
+      <End Role="City" EntitySet="City" />
     </AssociationSet>
     <AssociationSet Name="FK_CityStore_City" Association="Self.FK_CityStore_City">
-      <End Role="City" EntitySet="Cities" />
-      <End Role="CityStore" EntitySet="CityStores" />
+      <End Role="City" EntitySet="City" />
+      <End Role="CityStore" EntitySet="CityStore" />
     </AssociationSet>
     <AssociationSet Name="FK_User_City" Association="Self.FK_User_City">
-      <End Role="City" EntitySet="Cities" />
-      <End Role="User" EntitySet="Users" />
+      <End Role="City" EntitySet="City" />
+      <End Role="User" EntitySet="User" />
     </AssociationSet>
     <AssociationSet Name="FK_CityStore_Store" Association="Self.FK_CityStore_Store">
-      <End Role="Store" EntitySet="Stores" />
-      <End Role="CityStore" EntitySet="CityStores" />
+      <End Role="Store" EntitySet="Store" />
+      <End Role="CityStore" EntitySet="CityStore" />
     </AssociationSet>
     <AssociationSet Name="FK_DietRecipe_Diet" Association="Self.FK_DietRecipe_Diet">
-      <End Role="Diet" EntitySet="Diets" />
-      <End Role="DietRecipe" EntitySet="DietRecipes" />
+      <End Role="Diet" EntitySet="Diet" />
+      <End Role="DietRecipe" EntitySet="DietRecipe" />
     </AssociationSet>
     <AssociationSet Name="FK_FoodDiet_Diet" Association="Self.FK_FoodDiet_Diet">
-      <End Role="Diet" EntitySet="Diets" />
-      <End Role="FoodDiet" EntitySet="FoodDiets" />
+      <End Role="Diet" EntitySet="Diet" />
+      <End Role="FoodDiet" EntitySet="FoodDiet" />
     </AssociationSet>
     <AssociationSet Name="FK_User_Diet" Association="Self.FK_User_Diet">
-      <End Role="Diet" EntitySet="Diets" />
-      <End Role="User" EntitySet="Users" />
+      <End Role="Diet" EntitySet="Diet" />
+      <End Role="User" EntitySet="User" />
     </AssociationSet>
     <AssociationSet Name="FK_DietRecipe_Recipe" Association="Self.FK_DietRecipe_Recipe">
-      <End Role="Recipe" EntitySet="Recipes" />
-      <End Role="DietRecipe" EntitySet="DietRecipes" />
+      <End Role="Recipe" EntitySet="Recipe" />
+      <End Role="DietRecipe" EntitySet="DietRecipe" />
     </AssociationSet>
     <AssociationSet Name="FK_FoodItem_FoodCategory" Association="Self.FK_FoodItem_FoodCategory">
-      <End Role="FoodCategory" EntitySet="FoodCategories" />
-      <End Role="FoodItem" EntitySet="FoodItems" />
+      <End Role="FoodCategory" EntitySet="FoodCategory" />
+      <End Role="FoodItem" EntitySet="FoodItem" />
     </AssociationSet>
     <AssociationSet Name="FK_FoodDiet_FoodItem" Association="Self.FK_FoodDiet_FoodItem">
-      <End Role="FoodItem" EntitySet="FoodItems" />
-      <End Role="FoodDiet" EntitySet="FoodDiets" />
+      <End Role="FoodItem" EntitySet="FoodItem" />
+      <End Role="FoodDiet" EntitySet="FoodDiet" />
     </AssociationSet>
     <AssociationSet Name="FK_FoodPlan_FoodItem" Association="Self.FK_FoodPlan_FoodItem">
-      <End Role="FoodItem" EntitySet="FoodItems" />
-      <End Role="FoodPlan" EntitySet="FoodPlans" />
+      <End Role="FoodItem" EntitySet="FoodItem" />
+      <End Role="FoodPlan" EntitySet="FoodPlan" />
     </AssociationSet>
     <AssociationSet Name="FK_FoodRecipe_FoodItem" Association="Self.FK_FoodRecipe_FoodItem">
-      <End Role="FoodItem" EntitySet="FoodItems" />
-      <End Role="FoodRecipe" EntitySet="FoodRecipes" />
+      <End Role="FoodItem" EntitySet="FoodItem" />
+      <End Role="FoodRecipe" EntitySet="FoodRecipe" />
     </AssociationSet>
     <AssociationSet Name="FK_FoodPlan_MealPlan" Association="Self.FK_FoodPlan_MealPlan">
-      <End Role="MealPlan" EntitySet="MealPlans" />
-      <End Role="FoodPlan" EntitySet="FoodPlans" />
+      <End Role="MealPlan" EntitySet="MealPlan" />
+      <End Role="FoodPlan" EntitySet="FoodPlan" />
     </AssociationSet>
     <AssociationSet Name="FK_FoodRecipe_Recipe" Association="Self.FK_FoodRecipe_Recipe">
-      <End Role="Recipe" EntitySet="Recipes" />
-      <End Role="FoodRecipe" EntitySet="FoodRecipes" />
+      <End Role="Recipe" EntitySet="Recipe" />
+      <End Role="FoodRecipe" EntitySet="FoodRecipe" />
     </AssociationSet>
-    <AssociationSet Name="FK_UserType_User1" Association="Self.FK_UserType_User1">
-      <End Role="User" EntitySet="Users" />
-      <End Role="UserType" EntitySet="UserTypes" />
+    <AssociationSet Name="FK_User_UserType" Association="Self.FK_User_UserType">
+      <End Role="UserType" EntitySet="UserType" />
+      <End Role="User" EntitySet="User" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

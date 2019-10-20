@@ -13,10 +13,10 @@ namespace Deliverable04.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class IBEEHEALTHEntities : DbContext
+    public partial class IBEEHEALTHEntities2 : DbContext
     {
-        public IBEEHEALTHEntities()
-            : base("name=IBEEHEALTHEntities")
+        public IBEEHEALTHEntities2()
+            : base("name=IBEEHEALTHEntities2")
         {
         }
     
@@ -25,21 +25,20 @@ namespace Deliverable04.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<City> Cities { get; set; }
-        public virtual DbSet<CityStore> CityStores { get; set; }
-        public virtual DbSet<Diet> Diets { get; set; }
-        public virtual DbSet<DietRecipe> DietRecipes { get; set; }
-        public virtual DbSet<FoodCategory> FoodCategories { get; set; }
-        public virtual DbSet<FoodDiet> FoodDiets { get; set; }
-        public virtual DbSet<FoodItem> FoodItems { get; set; }
-        public virtual DbSet<FoodPlan> FoodPlans { get; set; }
-        public virtual DbSet<FoodRecipe> FoodRecipes { get; set; }
-        public virtual DbSet<MealPlan> MealPlans { get; set; }
-        public virtual DbSet<Province> Provinces { get; set; }
-        public virtual DbSet<Recipe> Recipes { get; set; }
-        public virtual DbSet<Store> Stores { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<UserType> UserTypes { get; set; }
+        public virtual DbSet<City> City { get; set; }
+        public virtual DbSet<CityStore> CityStore { get; set; }
+        public virtual DbSet<Diet> Diet { get; set; }
+        public virtual DbSet<DietRecipe> DietRecipe { get; set; }
+        public virtual DbSet<FoodCategory> FoodCategory { get; set; }
+        public virtual DbSet<FoodDiet> FoodDiet { get; set; }
+        public virtual DbSet<FoodItem> FoodItem { get; set; }
+        public virtual DbSet<FoodPlan> FoodPlan { get; set; }
+        public virtual DbSet<FoodRecipe> FoodRecipe { get; set; }
+        public virtual DbSet<MealPlan> MealPlan { get; set; }
+        public virtual DbSet<Province> Province { get; set; }
+        public virtual DbSet<Recipe> Recipe { get; set; }
+        public virtual DbSet<Store> Store { get; set; }
+        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<UserType> UserType { get; set; }
     }
 }

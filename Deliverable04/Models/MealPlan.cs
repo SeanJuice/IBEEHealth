@@ -23,7 +23,9 @@ namespace Deliverable04.Models
         public int MealPlanID { get; set; }
         public string Name { get; set; }
         public Nullable<int> Duration { get; set; }
+        public string Description { get; set; }
         public string Details { get; set; }
+        public string cover { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FoodPlan> FoodPlan { get; set; }
