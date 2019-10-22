@@ -14,10 +14,16 @@ namespace Deliverable04.Models
     
     public partial class UserType
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public UserType()
+        {
+            this.Users = new HashSet<User>();
+        }
+    
         public int UserTypeID { get; set; }
-        public Nullable<int> UserID { get; set; }
         public string Description { get; set; }
     
-        public virtual User User { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> Users { get; set; }
     }
 }

@@ -26,8 +26,10 @@
       <PropertyRef Name="DietID" />
     </Key>
     <Property Name="DietID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="DietType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DietType" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="cover" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="DietRecipes" Relationship="Self.FK_DietRecipe_Diet" FromRole="Diet" ToRole="DietRecipe" />
     <NavigationProperty Name="FoodDiets" Relationship="Self.FK_FoodDiet_Diet" FromRole="Diet" ToRole="FoodDiet" />
     <NavigationProperty Name="Users" Relationship="Self.FK_User_Diet" FromRole="Diet" ToRole="User" />
@@ -103,6 +105,9 @@
     <Property Name="MealPlanID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Duration" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Details" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cover" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="FoodPlans" Relationship="Self.FK_FoodPlan_MealPlan" FromRole="MealPlan" ToRole="FoodPlan" />
   </EntityType>
   <EntityType Name="Province">
@@ -118,8 +123,10 @@
       <PropertyRef Name="RecipeID" />
     </Key>
     <Property Name="RecipeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="cover" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="dietID" Type="Int32" />
     <NavigationProperty Name="DietRecipes" Relationship="Self.FK_DietRecipe_Recipe" FromRole="Recipe" ToRole="DietRecipe" />
     <NavigationProperty Name="FoodRecipes" Relationship="Self.FK_FoodRecipe_Recipe" FromRole="Recipe" ToRole="FoodRecipe" />
   </EntityType>
@@ -155,19 +162,19 @@
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Height" Type="Double" />
     <Property Name="Weight" Type="Double" />
-    <Property Name="Allergies" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UserTypeID" Type="Int32" />
     <NavigationProperty Name="City" Relationship="Self.FK_User_City" FromRole="User" ToRole="City" />
     <NavigationProperty Name="Diet" Relationship="Self.FK_User_Diet" FromRole="User" ToRole="Diet" />
-    <NavigationProperty Name="UserTypes" Relationship="Self.FK_UserType_User1" FromRole="User" ToRole="UserType" />
+    <NavigationProperty Name="UserType" Relationship="Self.FK_User_UserType" FromRole="User" ToRole="UserType" />
   </EntityType>
   <EntityType Name="UserType">
     <Key>
       <PropertyRef Name="UserTypeID" />
     </Key>
     <Property Name="UserTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserID" Type="Int32" />
     <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="User" Relationship="Self.FK_UserType_User1" FromRole="UserType" ToRole="User" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_User_UserType" FromRole="UserType" ToRole="User" />
   </EntityType>
   <Association Name="FK_City_Province">
     <End Role="Province" Type="Self.Province" Multiplicity="0..1" />
@@ -337,15 +344,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_UserType_User1">
-    <End Role="User" Type="Self.User" Multiplicity="0..1" />
-    <End Role="UserType" Type="Self.UserType" Multiplicity="*" />
+  <Association Name="FK_User_UserType">
+    <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="UserID" />
+      <Principal Role="UserType">
+        <PropertyRef Name="UserTypeID" />
       </Principal>
-      <Dependent Role="UserType">
-        <PropertyRef Name="UserID" />
+      <Dependent Role="User">
+        <PropertyRef Name="UserTypeID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -422,9 +429,9 @@
       <End Role="Recipe" EntitySet="Recipes" />
       <End Role="FoodRecipe" EntitySet="FoodRecipes" />
     </AssociationSet>
-    <AssociationSet Name="FK_UserType_User1" Association="Self.FK_UserType_User1">
-      <End Role="User" EntitySet="Users" />
+    <AssociationSet Name="FK_User_UserType" Association="Self.FK_User_UserType">
       <End Role="UserType" EntitySet="UserTypes" />
+      <End Role="User" EntitySet="Users" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

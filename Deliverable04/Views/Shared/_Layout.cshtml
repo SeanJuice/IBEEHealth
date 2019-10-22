@@ -17,7 +17,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">IBEE DIET</a>
+            <a class="navbar-brand js-scroll-trigger" onclick="location.href='@Url.Action("Index","Home")';">IBEE DIET</a>
             <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
@@ -25,19 +25,25 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">RECIPES</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="location.href='@Url.Action("Recipes","Home")';">RECIPES</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">DIETS</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="location.href='@Url.Action("Diets","Home")';">DIETS</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">MEAL PLANS</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="location.href='@Url.Action("MealPlanDetails","IBEEHEALTH")';">MEAL PLANS</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">RECOMMENDATIONS</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="location.href='@Url.Action("StoreLocator", "IBEEHEALTH")';">STORES</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link btn btn-sm btn-success py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">LOGIN</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="location.href='@Url.Action("Recommendation","IBEEHEALTH")';">RECOMMENDATIONS</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link btn btn-sm btn-primary py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="location.href='@Url.Action("Profile","IBEEHEALTH")';">Profile</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link btn btn-sm btn-success py-3 px-0 px-lg-3 rounded js-scroll-trigger" onclick="location.href='@Url.Action("SignIn","IBEEHEALTH")';">Sign Out</a>
                     </li>
 
                 </ul>

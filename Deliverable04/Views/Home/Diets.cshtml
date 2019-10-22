@@ -4,16 +4,23 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<link href="~/Scripts/Locator.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.0.0.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+<br /> <br /> <br />
+<h2 align="center">Diets</h2>
+
 <div class="row w-100 row-eq-height" style="margin-top:4rem">
     @foreach (var diet in Model.diets)
     {
         <div class="col-md-4 w-100 px-2 mt-2">
             <div class="card w-100">
-                <img src="@diet.Cover" class="card-img-top" alt="...">
+                <img src="@diet.cover" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">@diet.Name</h5>
                     <p class="card-text">@diet.Description</p>
-                    <a onclick="location.href = '@Url.Action("diet/1","Home")'; return false;" class="btn btn-primary">view</a>
+                    <a onclick="location.href = '@Url.Action("Diet", "Home", new { id = @diet.DietID })'" class="btn btn-primary">view</a>
                 </div>
             </div>
         </div>

@@ -1,0 +1,166 @@
+﻿@model List<Deliverable04.Models.Store>
+
+@{
+    ViewBag.Title = "StoreLocator";
+}
+
+<h2>StoreLocator</h2>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+<link href="~/Scripts/Locator.css" rel="stylesheet" />
+
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/JavaScript.js"></script>
+
+
+
+
+
+<br /> <br />
+<header>
+    <img src="~/Content/FOLLOW ME.png" class="img-fluid" alt="Responsive image">
+</header>
+<br />
+<br />
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4 d-flex justify-content-center">
+            <div class="card" style="width: 20rem;">
+
+                <div class="card-body">
+                    <h5 class="card-title">Choose your location </h5>
+
+                    <p>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2"> Select Location </button>
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                <div class="card card-body">
+
+
+                                    <p>
+                                        <label data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">@ViewBag.First</label>
+                                    </p>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                                <div class="card card-body">
+                                                    <button type="submit" class="btn btn-success" name="btnJoburg" data-toggle="modal" data-target="#myModal">@ViewBag.cit1</button>
+
+                                                    <div id="myModal" class="modal fade" role="dialog">
+                                                        <div class="modal-dialog">
+
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                    <h4 class="modal-title"> Shops </h4>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <p>1. @ViewBag.str1 </p>
+                                                                    <p>2. @ViewBag.str2 </p>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+          
+                    </div>
+
+
+
+
+
+
+
+                    <!-- <div class="dropdown">
+                         <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+                             Location
+                         </button>
+                         <ul class="dropdown-menu">
+                             <li><a href="#">Pretoria</a> </li>
+                             <li><a href="#"></a>Johannesburg</li>
+                         </ul>
+                     </div>-->
+                    <!-- <button type="submit" class="btn btn-success" >Choose Province</button> <br /> <br />
+
+                     <div id="first">
+                         <button type="submit" class="btn btn-success">@ViewBag.First</button>
+                         <button type="submit" class="btn btn-success">@ViewBag.Last</button>
+                     </div>-->
+                    <!--<div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown button
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>-->
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+        <br /> <br />
+
+       <!-- <div class="container-fluid">
+            <table class="table thead-dark">
+
+                <tr style="font-size:20px">
+                    <th>Store Name</th>
+                    <th>Website</th>
+                    <th>Delivery Availability</th>
+                </tr>
+
+                @foreach (Deliverable04.Models.Store item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Website)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AvailableOnline)
+                        </td>
+                    </tr>
+                }
+            </table>
+
+        </div>-->
+
+
+
+

@@ -1,0 +1,59 @@
+﻿
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>StoreView</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StoreID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Website)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvailableOnline)
+            </th>
+            <th></th>
+        </tr>
+    @if(Model.
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StoreID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Website)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AvailableOnline)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.StoreID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.StoreID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.StoreID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

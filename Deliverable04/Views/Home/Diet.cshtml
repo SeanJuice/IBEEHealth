@@ -4,5 +4,59 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Diet</h2>
+<div class="container">
+    <h2>Recipe: @Model.diet.Name </h2>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="@Model.diet.cover" class="d-block w-100" alt="..." />
+
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+</div>
+
+<br />
+
+
+<div class="container">
+    <p>
+        @Model.diet.Description
+    </p>
+
+    <br />
+    <label>By: IBEE Health</label>
+    <br />
+
+
+
+    <br />
+
+    <h6>Related recipes:</h6>
+    <div class="row">
+        
+        @foreach (var recipe in Model.recipes)
+        {
+            <div class="col-md-4">
+                <img class="rounded" style="height:12rem;width:12rem" src="@recipe.cover" alt="Alternate Text" />
+                <p style="cursor:pointer;color:blue" onclick="location.href = '@Url.Action("Recipe", "Home", new { id = @recipe.RecipeID })'" class="">
+                    @recipe.Name
+                </p>
+            </div>
+        }
+    </div>
+
+</div>
 

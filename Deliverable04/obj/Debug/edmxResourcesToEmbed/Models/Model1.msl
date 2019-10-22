@@ -25,6 +25,8 @@
           <ScalarProperty Name="DietID" ColumnName="DietID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="DietType" ColumnName="DietType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="cover" ColumnName="cover" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -91,6 +93,9 @@
           <ScalarProperty Name="MealPlanID" ColumnName="MealPlanID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="cover" ColumnName="cover" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -108,6 +113,8 @@
           <ScalarProperty Name="RecipeID" ColumnName="RecipeID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="cover" ColumnName="cover" />
+          <ScalarProperty Name="dietID" ColumnName="dietID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -143,7 +150,8 @@
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Height" ColumnName="Height" />
           <ScalarProperty Name="Weight" ColumnName="Weight" />
-          <ScalarProperty Name="Allergies" ColumnName="Allergies" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -151,7 +159,6 @@
       <EntityTypeMapping TypeName="IBEEHEALTHModel.UserType">
         <MappingFragment StoreEntitySet="UserType">
           <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="Description" ColumnName="Description" />
         </MappingFragment>
       </EntityTypeMapping>

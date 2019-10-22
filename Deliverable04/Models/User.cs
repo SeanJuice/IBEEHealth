@@ -14,12 +14,6 @@ namespace Deliverable04.Models
     
     public partial class User
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
-        {
-            this.UserTypes = new HashSet<UserType>();
-        }
-    
         public int UserID { get; set; }
         public Nullable<int> CityID { get; set; }
         public Nullable<int> DietID { get; set; }
@@ -28,11 +22,11 @@ namespace Deliverable04.Models
         public string Email { get; set; }
         public Nullable<double> Height { get; set; }
         public Nullable<double> Weight { get; set; }
-        public string Allergies { get; set; }
+        public string Password { get; set; }
+        public Nullable<int> UserTypeID { get; set; }
     
         public virtual City City { get; set; }
         public virtual Diet Diet { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserType> UserTypes { get; set; }
+        public virtual UserType UserType { get; set; }
     }
 }

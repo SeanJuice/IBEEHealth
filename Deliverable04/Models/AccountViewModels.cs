@@ -23,6 +23,7 @@ namespace Deliverable04.Models
         public bool RememberMe { get; set; }
     }
 
+
     public class VerifyCodeViewModel
     {
         [Required]
@@ -46,24 +47,17 @@ namespace Deliverable04.Models
         public string Email { get; set; }
     }
 
-    public class LoginViewModel
+    
+    /*public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "Name")]
+        public string Name { get; set; }
 
         [Required]
-        [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
+        [Display(Name = "Surname")]
+        public string Surname { get; set; }
 
-        [Display(Name = "Remember me?")]
-        public bool RememberMe { get; set; }
-    }
-
-    public class RegisterViewModel
-    {
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -79,7 +73,7 @@ namespace Deliverable04.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
-    }
+    }*/
 
     public class ResetPasswordViewModel
     {

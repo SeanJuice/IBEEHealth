@@ -1,17 +1,244 @@
-﻿@{
-    ViewBag.Title = "Contact";
+﻿@model Deliverable04.ViewModels.ModalViewModel
+
+@{
+    Layout = null;
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+@*<nav>
+        <div>
+        <a class="navbar-brand" onclick="location.href='@Url.Action("Contact", "Home")';return false;">
+            <img src="~/Content/Land/img/logo.png" style="width:15%" alt="">
+        </a>
+        </div>
+    </nav>*@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Welcome</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/Land/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="~/Content/Land/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="~/Content/Land/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="~/Content/Land/css/landing-page.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg  text-uppercase fixed-top" style="background-color: #2c3e50;   ">
+        <div class="container">
+            <a class="navbar-brand" onclick="location.href='@Url.Action("Contact", "Home")';return false;">
+                <img src="~/Content/Land/img/logo.png" style="width:15%" alt="">
+            </a>
+            &nbsp;
+
+            <a class="btn btn-lg btn-success" onclick="location.href='@Url.Action("SignIn", "IBEEHEALTH")';return false;" style="color:aliceblue">Sign in</a>
+        </div>
+    </nav>
+
+    <!-- Masthead -->
+    <header class="masthead text-white text-center">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <h1 class="mb-5">HEALTH IS WEALTH </h1>
+                </div>
+                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                    <form>
+                        <div class="form-row">
+                            <div class="col-12 col-md-3 col-lg-12">
+                                <button type="submit" class="btn btn-block btn-lg btn-success" onclick="location.href='@Url.Action("Register", "IBEEHEALTH")';return false;">SIGN UP!</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Icons Grid -->
+    <section class="features-icons bg-light text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                        <div class="features-icons-icon d-flex"><i class="icon-check m-auto text-success"></i> </div>
+                        <h3>Check Your Recipes</h3>
+                        <p class="lead mb-0">See whats cooking</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h3>&nbsp;</h3>
+                    <h3>&nbsp;</h3>
+                    <h3>&nbsp;</h3>
+                    <h3>Here at IBEE HEALTH Your Health is Our priority </h3>
+                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3"> </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                        <div class="features-icons-icon d-flex">
+                            <i class="icon-check m-auto text-success"></i>
+                        </div>
+                        <h3>Calculate Your BMI</h3>
+                        <p class="lead mb-0">Know your body </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Showcases -->
+    <section class="showcase">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+
+                <div class="col-lg-6 order-lg-2 text-white showcase-img border border-secondary" style="background-image: url('/Content/Land/img/bg-showcase-1.jpg');"></div>
+                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                    <h2>We provide a system where you can plan healthy life style</h2>
+                    <p class="lead mb-0">Start today</p>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-lg-6 text-white showcase-img border border-secondary" style="background-image: url('/Content/Land/img/bg-showcase-2.jpg');"></div>
+                <div class="col-lg-6 my-auto showcase-text">
+                    <h2>Locate Stores healthy around your area</h2>
+                    <p class="lead mb-0">With our fully functional store locator&nbsp; theres no healhty store that hide from you</p>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-lg-6 order-lg-2 text-white showcase-img  border border-secondary" style="background-image: url('/Content/Land/img/bg-showcase-3.jpg');"></div>
+                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                    <h2>Easy to Use </h2>
+                    <p class="lead mb-0">With just a few clicks you can be on your way to a fully healthy life style</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials text-center bg-light">
+        <div class="container">
+            <h2 class="mb-5">We are IBEE HEALTH</h2>
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <img src="~/Content/Land/img/testimonials-2.jpg" alt="" width="700" class="img-fluid  mb-3 border border-secondary"  style="width:800px">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="call-to-action text-white text-center">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <h2 class="mb-4">Ready to get started? Sign up now!</h2>
+                </div>
+                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                    <form>
+                        <div class="form-row">
+                            <div class="col-12 col-md-3 col-lg-12">
+                                <button type="submit" class="btn btn-block btn-lg btn-success" onclick="location.href='@Url.Action("Register", "IBEEHEALTH")';return false;">SIGN UP!</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="h-100 text-center text-lg-left my-auto col-lg-12">
+                    <ul class="list-inline mb-2">
+                        <li class="list-inline-item">
+                           GROUP 10
+                        </li>
+                        <li class="list-inline-item">&sdot;</li>
+                        <li class="list-inline-item">
+                      
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/Content/Land/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/Land/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+
+
+    <head>
+        <title>Open Bootstrap Modal on Page Load</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+    $(document).ready(function(){
+        $("#myModal").modal('show');
+    });
+        </script>
+    </head>
+    <body>
+        <div id="myModal" class="modal fade">
+            @using (Html.BeginForm("Profile", "IBEEHEALTH", FormMethod.Post))
+            {
+
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+                            <h4 class="modal-title">Please Fill in your body details</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            @Html.AntiForgeryToken()
+
+                            @Html.ValidationSummary("", new { @class = "text-danger" })
+
+                            <div class="form-label-group">
+                                @Html.TextBoxFor(m => m.Height, new { @class = "form-control", @placeholder = "Your Name", @autofocus = "" })
+                                @Html.LabelFor(m => m.Height, new { @class = "control-label", @autofocus = "" })
+                            </div>
+                            <br />
+
+                            <div class="form-label-group">
+                                @Html.TextBoxFor(m => m.Weight, new { @class = "form-control", @placeholder = "Your Name", @autofocus = "" })
+                                @Html.LabelFor(m => m.Weight, new { @class = "control-label", @autofocus = "" })
+                            </div>
+                            <button type="submit" class="close" data-dismiss="modal" aria-hidden="true">Submit</button>
+
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </body>

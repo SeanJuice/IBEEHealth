@@ -1,80 +1,91 @@
-﻿
+﻿@model Deliverable04.Models.RegisterViewModel
 @{
     ViewBag.Title = "Recommendation";
 }
 
+<link href="~/Scripts/Locator.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.0.0.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<head>
+    <script src="~/Scripts/JavaScript.js"></script>
+</head>
+
 <h1>Recommendation</h1>
+<div align="center">
+    <div class="container">
 
-<div class="container">
+        @using (Html.BeginForm("Recommendation", "IBEEHEALTH", FormMethod.Post))
+        {
+            <h1 style="font-size:40px"> BMI Calculator </h1> <br />
 
-    @using (Html.BeginForm("Recommendation", "IBEEHEALTH", FormMethod.Post))
-    {
-    <h2> BMI Calculator </h2> <br />
+            <div class="row">
+                <div class="col-sm-4">
 
-    <div class="row">
-        <div class="col-sm-4">
+                    <label style="font-size:12px"> Height </label> <br />
+                    <input type="number" name="Height"  required />
 
-            <label> Height </label> <br />
-            <input type="number" name="Height" required/>
+                    <br />
+                    <br />
 
-            <br />
-            <br />
+                    <label style="font-size:12px"> Weight </label> <br />
+                    <input type="number" name="Weight"  required />
 
-            <label> Weight </label> <br />
-            <input type="number" name="Weight" required/>
+                    <br />
+                    <br />
 
-            <br />
-            <br />
-
-            <button class="btn-default" type="submit"> Calculate </button> <br /> <br />
-        </div>
+                    <button class="btn-secondary" type="submit"> Calculate </button> <br /> <br />
+                </div>
 
 
-        <div class="col-sm-4">
-            <h3> Your BMI: </h3> 
+                <div class="col-sm-4" onload="myFunc()">
+                    <h2> Your BMI: </h2>
 
-            -------------------------<br /> <br />
-            <div style="font-size:30px" >
-                @ViewBag.Result
+                    -------------------------<br /> <br />
+                    <div style="font-size:30px">
+                        @ViewBag.Result
+                        <input type="hidden" id="result" value="@ViewBag.Result"/>
+                    </div>
+
+                    <br /> <br />
+
+                    -------------------------
+                </div>
             </div>
-
-            <br /> <br />
-
-            -------------------------
-        </div>
+        }
     </div>
-    }
+
+    <br /> <br />
+
+
+    <div class="container">
+        <table class="table thead-dark">
+            <tr style="font-size:20px">
+                <th>Classification</th>
+                <th>BMI</th>
+                <th>Recommendation</th>
+            </tr>
+            <tr style="font-size:12px">
+                <td>Underweight</td>
+                <td>Less than 18.50</td>
+                <td> <button onclick="location.href = '@Url.Action("Diet/1", "Home")'" class="btn-secondary" id="btnUnderweight" >Underweight Diet</button> </td>
+            </tr>
+            <tr style="font-size:12px">
+                <td>Healthy</td>
+                <td>18.50 to 24.99</td>
+                <td> <button onclick="location.href = '@Url.Action("Diet/3", "Home")'" class="btn-secondary" id="btnHealthy">Healthy Diet</button> </td>
+            </tr>
+            <tr style="font-size:12px">
+                <td>Overweight</td>
+                <td>25.00 to 29.99</td>
+                <td> <button onclick="location.href = '@Url.Action("Diet/1", "Home")'" class="btn-secondary" id="btnOverweight">Overweight Diet</button> </td>
+            </tr>
+            <tr style="font-size:12px">
+                <td>Obese</td>
+                <td>30 or more</td>
+                <td> <button onclick="location.href = '@Url.Action("Diet/3", "Home")'" class="btn-secondary" id="btnObese">Obese Diet</button> </td>
+            </tr>
+        </table>
+
+    </div>
 </div>
 
-<br /> <br />
-
-<div class="container">
-    <table class="table-striped">
-        <tr>
-            <th>Classification</th>
-            <th>BMI</th>
-            <th>Recommendation</th>
-        </tr>
-        <tr>
-            <td>Underweight</td>
-            <td>Less than 18.50</td>
-            <td> <button class="btn-default" name="btnUnderweight">Underweight Diet</button> </td>
-        </tr>
-        <tr>
-            <td>Healthy</td>
-            <td>18.50 to 24.99</td>
-            <td> <button class="btn-default"name="btnHealthy">Healthy Diet</button> </td>
-        </tr>
-        <tr>
-            <td>Overweight</td>
-            <td>25.00 to 29.99</td>
-            <td> <button class="btn-default"name="btnOverweight">Overweight Diet</button> </td>
-        </tr>
-        <tr>
-            <td>Obese</td>
-            <td>30 or more</td>
-            <td> <button class="btn-default"name="btnObese">Obese Diet</button> </td>
-        </tr>
-    </table>
-
-</div>
